@@ -1,0 +1,42 @@
+package Empleados;
+
+
+
+public class Main {
+    public static void main(String[] args) {
+      
+        Empleado empleado1 = new Empleado("Juan", "Perez", "12345678A", "Calle 1", 5, "555-1234", 1500);
+        Secretario secretario1 = new Secretario("Ana", "Lopez", "87654321B", "Calle 2", 10, "555-5678", 1800, "Despacho 1", "Fax 555");
+        Vendedor vendedor1 = new Vendedor("Pedro", "Garcia", "11223344C", "Calle 3", 3, "555-9876", 2000, "ABC-123", "666-1234", "Norte", 5);
+        JefeDeZona jefeZona1 = new JefeDeZona("Laura", "Martinez", "55667788D", "Calle 4", 8, "555-7654", 2500, "Despacho 2", "XYZ-789");
+
+        System.out.println("Información de los empleados:");
+        empleado1.imprimir();
+        secretario1.imprimir();
+        vendedor1.imprimir();
+        jefeZona1.imprimir();
+
+       
+        System.out.println("\nIncrementando salarios...");
+        secretario1.incrementarSalario(5);
+        vendedor1.incrementarSalario(10);   
+        jefeZona1.incrementarSalario(20); 
+
+    
+        System.out.println("\nDespués de los aumentos salariales:");
+        secretario1.imprimir();
+        vendedor1.imprimir();
+        jefeZona1.imprimir();
+
+        
+        secretario1.cambiarSupervisor(empleado1);
+        jefeZona1.cambiarSecretario(secretario1);
+        
+       
+        vendedor1.darAltaCliente();
+        vendedor1.darBajaCliente();
+
+        
+        jefeZona1.darAltaVendedor(vendedor1);
+    }
+}

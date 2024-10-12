@@ -1,0 +1,88 @@
+package Aplicacion;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Persona {
+    private String nombre;
+    private String apellido;
+    private int edad;
+    private String tipo;
+    private String facultad;
+    private String departamento;
+    private String area;
+
+    public Persona(String nombre, String apellido, int edad, String tipo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.tipo = tipo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+       public String getFacultad() {
+        return facultad;
+    }
+
+    public void setFacultad(String facultad) {
+        this.facultad = facultad;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+}
+
+class GestorPersonas {
+    private List<Persona> personas;
+
+    public GestorPersonas() {
+        this.personas = new ArrayList<>();
+    }
+
+    public void agregarPersona(Persona persona) {
+        personas.add(persona);
+    }
+
+    public void mostrarPersonas() {
+        for (Persona persona : personas) { 
+            System.out.println("Nombre: " + persona.getNombre() + ", Apellido: " + persona.getApellido() + ", Edad: " + persona.getEdad() + ", Tipo: " + persona.getTipo());
+            
+            if (persona.getTipo().equals("alumno")) {
+                System.out.println("Facultad: " + persona.getFacultad());
+            } else if (persona.getTipo().equals("profesor")) {
+                System.out.println("Departamento: " + persona.getDepartamento());
+            } else {
+                System.out.println("Área: " + persona.getArea());
+            }
+            System.out.println(); 
+        }
+    }
+}

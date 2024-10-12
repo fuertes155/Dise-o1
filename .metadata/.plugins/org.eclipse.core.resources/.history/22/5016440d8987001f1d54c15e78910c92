@@ -1,0 +1,25 @@
+package Aplicacion;
+
+public class Main {
+    public static void main(String[] args) {
+        GestorPersonas gestor = new GestorPersonas();
+
+      
+        Persona alumno = new Persona("Juan", "Pérez", 20, "alumno");
+        alumno.setFacultad("Ingeniería");
+
+        Persona profesor = new Persona("María", "González", 35, "profesor");
+        profesor.setDepartamento("Matemáticas");
+
+        Persona empleado = new Persona("Luis", "Martínez", 40, "empleado");
+        empleado.setArea("Administración");
+
+        
+        gestor.agregarPersona(alumno);
+        gestor.agregarPersona(profesor);
+        gestor.agregarPersona(empleado);
+
+    
+        gestor.mostrarPersonas();
+    }
+}
